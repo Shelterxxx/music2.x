@@ -1,7 +1,5 @@
 <template>
 <div  style="height:calc(100vh - 200px) ; overflow:auto" ref="top"  v-load='list'>
-
-
    <el-container >
   <el-header>
       <el-popover
@@ -77,6 +75,7 @@ export default {
     },
     watch:{
       cat(val,oldval){
+        this.playlist=[]
        this.list()
 
       },
