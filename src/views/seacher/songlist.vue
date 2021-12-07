@@ -1,0 +1,124 @@
+<template>
+    <div class="main">
+        <div>
+             <seacher></seacher>
+        </div>
+        <div style="padding:20px"> 
+            <h3 style="margin: 0px">一共搜索到{{pageall}}首</h3>
+       <div>
+           <div class="table" v-for="(item) in tableData" :key="item.id" @click="$router.push(`/playlist/${item.id}`)">
+               <div>
+                   <img 
+             
+              v-lazy="item.coverImgUrl" alt="">   <span> {{item.name}}</span> 
+               </div>
+           <div>
+               {{item.trackCount}}首
+           </div>
+               <div>
+               {{item.creator.nickname}}
+               </div>
+                
+           </div> 
+        </div>
+         
+       </div>
+      <Pagination :page="page" :pageall="pageall" :pagesize='limit' @pageChange='pageChange' ></Pagination>
+    </div>
+</template>
+<script>
+import  seacher from './seacher.vue' 
+import        Pagination      from '../../components/fenye.vue'
+export default {
+    data(){
+        return{
+            page:0,
+            tableData:"",
+            page:1,
+            pageall:0,
+            limit:30
+
+           
+        }
+    },
+    methods:{
+     
+    async  mv(){
+        const result=await this.axios.get(`/cloudsearch?keywords= ${this.$route.params.id}`,{
+            params:{
+                limit:30,
+                offset: this.page,
+                type:1000
+            }
+        })
+        console.log(result)
+        this.tableData= result.data.result.playlists  
+        console.log()
+        this.pageall =result.data.result.playlistCount    },
+
+      
+      pageChange(page){
+        console.log(page)
+            this.page=page
+          
+      },
+    async  fenye(val){
+ const result=await this.axios.get(`/cloudsearch?keywords= ${this.$route.params.id}`,{
+            params:{
+                limit:30,
+                offset: val,
+                type:1000
+            }
+        })
+        console.log(result)
+        this.tableData= result.data.result.playlists  
+        let main =document.querySelector('.main')
+        console.log(main)
+        console.log(main.S)
+      },
+     
+
+
+    },
+    mounted(){
+        this.mv()
+        
+    },
+    watch:{
+      page(val){
+         this.fenye(val)
+      }
+    },
+    components:{
+        seacher,
+        Pagination
+    }
+}
+</script>
+
+<style lang="less" scoped>
+.main{
+    height:calc(100vh - 200px);
+    overflow: auto;
+    width: 100%;
+   
+}
+.table{
+    height: 80px;
+    line-height: 80px;
+    display: flex;
+     
+    >div{
+        flex:1
+    }
+   
+    img{
+        height: 70px;
+        width: 70px;
+        margin: 5px;
+        border-radius: 5px;
+        float: left;
+    }
+}
+
+</style>

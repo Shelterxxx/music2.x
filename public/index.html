@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en"></html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href=//at.alicdn.com/t/font_2974016_eouifkpvbte.css>
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    li{
+      list-style-type:none;
+
+    }
+    li:hover{
+      background-color: #E6E6E6;
+    }
+    html,body{
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      min-width:1200px;
+    }
+    h6{
+      margin: 0px;
+    }
+    body{
+      min-width:1200px;
+    }
+    *::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #ccc;
+}
+  </style>
   <body>
     <noscript>
+      
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
