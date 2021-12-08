@@ -1,5 +1,5 @@
 <template>
-    <el-container  >
+    <el-container  style="calc(100vh -140px) ; overflow:auto" >
   <el-header  style=" height: auto;">
     <div class="left">
         <img :src="coverImgUrl" alt="">
@@ -20,11 +20,14 @@
                <span style="margin-right:15px  " >歌曲:{{trackIds.length}}</span>
                     <span >播放:{{playCount|playnum}}</span>
           </div>
-          <div class="text"> <i v-if="text ?true : false"  @click='open' style="position:absolute ; top:0px ;left:0px" class="el-icon-caret-bottom"></i>
-           <i v-if="text ?false : true"  @click='close' style="position:absolute ; top:0px ;right:0px" class="el-icon-caret-top"></i>
-        简介： {{description}}  
+          <div style="position: relative;" > <i v-if="text ?true : false"  @click='close' style="position:absolute ; top:0px ;right:0px" class="el-icon-caret-top"></i>
+           <i v-if="text ?false : true"  @click='close' style="position:absolute ; top:0px ;right:0px" class="el-icon-caret-bottom "></i>
+      
           
-          </div>
+          
+          <div class="text">
+              简介： {{description}}  
+          </div></div>
      </div>
   </el-header>
   <el-main> 
@@ -254,9 +257,15 @@ export default {
             close(){
     this.text=!this.text
     let div =document.querySelector('.text')
-              div.style.height='60px'
+    if(this.text){
+      div.style.whiteSpace='normal'
+    }else{
+       div.style.whiteSpace='nowrap'
+    }
+              
+              
             }
-        
+      
     },
     computed:{
       playid(){
@@ -290,16 +299,13 @@ export default {
 .el-table{
   cursor: pointer;
 }
-.el-container{
-    // height: 100%;
-    // width: 100%;
-}
+
 .el-header{
 
    display: flex; 
    height: 400px;
  .left{
-     flex:1;
+     
      img{
         
          width: 220px;
@@ -310,14 +316,14 @@ export default {
  }
   .rigth{
     padding-top: 20px;
-     flex:4;
+     flex:1;
  }
 }
 .text{
-  position: relative;
-  width: 100%;
+
+  width: 60vw;
   line-height: 60px;  
-  white-space:nowrap;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0px 0px  30px 0px ;

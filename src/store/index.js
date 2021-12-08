@@ -103,7 +103,8 @@ export default new Vuex.Store({
      state.songList={}
      state.loveid={},
      state.isLogin=false
-     localStorage.removeItem('user','token')
+     localStorage.removeItem('token')
+     localStorage.removeItem('user')
    }
   
   },

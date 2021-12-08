@@ -18,8 +18,8 @@ instance.interceptors.request.use(config=>{
     console.log(err);
 })
 
-instance.interceptors.response.use(
-    response => {
+instance.interceptors.response.use(response => {
+      console.log(response)
       //拦截响应，做统一处理 
     //   if (response.data.code) {
     //     switch (response.data.code) {

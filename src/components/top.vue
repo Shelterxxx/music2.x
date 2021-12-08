@@ -75,7 +75,7 @@
       <span>{{user.nickname}}</span>
   </div>
   <div class="header-img" v-else> 
-      <img src='' alt="">
+     
   
      <el-button type="text" @click="dialogTableVisible = true">未登录，请登录</el-button>
 
@@ -321,6 +321,9 @@ password:[
              this.$store.commit('changgeisLogin',true)
               this.user=user
                        
+        }else{
+          this.$rouer.push('/')
+           this.$store.commit('changgeisLogin',false)
         }
         this.history=JSON.parse(localStorage.getItem('history'))
         if( this.history instanceof Array){
