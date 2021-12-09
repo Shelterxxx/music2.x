@@ -15,7 +15,7 @@
                 <span  style=" margin:0px auto ">{{item.name}}</span>
             </div>
         </div>
-           <Pagination @pageChange='pageChange' :page='page'></Pagination>
+           <Pagination></Pagination>
     </div> </div>
 </template>
 

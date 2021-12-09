@@ -7,7 +7,7 @@
                 <comment  :comments='comments' type='最新' >
                 <h3>最新评论   </h3>
                 </comment>  
-                  <pagination :pageall='pageall'  :pagelimit='pagelimit' @pageChange='pageChange'></pagination>
+                  <pagination :pageall='pageall'   @pageChange='pageChange'></pagination>
     </div>
 </template>
 <script>

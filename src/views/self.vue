@@ -15,17 +15,17 @@
            </div>
             <div class="love" style="text-align:center">
             <div> 
-                <h1>1</h1>
+                <h1>{{user.profile.eventCount}}</h1>
                 <h4>动态</h4>
             </div>
 
              <div>
-                <h1>1</h1>
+                <h1>{{user.profile.follows}}</h1>
                 <h4>关注</h4>
             </div>
            
              <div>
-                  <h1>1</h1>
+                  <h1>{{user.profile.followeds}}</h1>
                 <h4>粉丝</h4>
             </div>
         
@@ -71,7 +71,7 @@ this.getdatails()
     methods:{
           async  getdatails(){
                 let result = await this.axios.get(`/user/detail?uid=${this.userID}`)
-                console.log(`用户信息`,result)
+                console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxx`,result)
                 this.user=result.data
             let result1 = await this.axios.get(`/user/playlist?uid=${this.userID}`)
                 console.log(`用户信息`,result1)

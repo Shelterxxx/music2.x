@@ -19,15 +19,15 @@ export default {
     },
     props:{
         page:{
-            type:Number,
+            // type:Number,
             default:1
         },
         pageall:{
-             type:Number,
-            default:500
+            //  type:Number,
+            default:600
         },
         pagesize:{
-             type:Number,
+            //  type:Number,
              default:50
         }
 

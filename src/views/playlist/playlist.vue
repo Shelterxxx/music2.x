@@ -7,6 +7,10 @@
      <div class="rigth">
          <h1>{{name}}</h1>
          <h4>创建时间：{{time|dateFormat}}</h4>
+         <div style='overflow:hidden;line-height:50px'>
+           <img style="height: 50px;width: 50;border-radius: 50% ;float:left" :src="playlist1.creator.avatarUrl" alt="" @click="$router.push(`/self/${playlist1.creator.userId}`)">
+           <el-link type="info">{{playlist1.creator.nickname}}</el-link>
+         </div>
          <el-button type="danger" icon="el-icon-video-play" round>播放</el-button>
          <el-button v-if="isstar"  @click="change" icon="el-icon-folder-add" round>已收藏  ({{add|playnum}})</el-button>
           <el-button v-else  @click="change1" icon="el-icon-folder-add" round>未收藏  ({{add|playnum}})</el-button>

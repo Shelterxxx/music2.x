@@ -7,7 +7,7 @@
                 <div style=" overflow: hidden;">  <img v-lazy="item.user.avatarUrl" alt="">
                  <el-link  @click="$router.push(`/self/${item.user.userId}`) ;  $store.state.open=false " type="primary">{{item.user.nickname}}:</el-link><span  >{{item.content}}</span>
                   <div v-if='item.beReplied' style=" background-color: rgb(151, 151, 151);">
-                    <div v-for="(item) in item.beReplied" :key="item" >
+                    <div v-for="(item) in item.beReplied" :key="item.id" >
                  <el-link  type="primary">@{{item.user.nickname}}:</el-link> <span  >{{item.content}}</span>
                     </div>
                   </div>
