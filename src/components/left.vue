@@ -15,8 +15,8 @@
       </el-menu-item>
  <el-submenu index="2">
     <template slot="title">我的音乐</template>
-    <el-menu-item index="2-1">最近播放</el-menu-item>
-    <el-menu-item index="2-2">我的收藏</el-menu-item>
+    <el-menu-item >最近播放</el-menu-item>
+    <el-menu-item >我的收藏</el-menu-item>
   </el-submenu>
   <el-submenu index="3">
     <template slot="title">我的歌单</template>
