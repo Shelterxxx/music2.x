@@ -11,7 +11,7 @@
                  <span v-if="user.profile.gender==1?true:false">♂</span>
                     <span v-else>♀</span>
            <i></i>
-           <el-button  v-if="userID==$store.state.user.id" @click="$router.push(`/user/${$route.params.id}`)" style="border-radius: 30px ; float:right" icon="el-icon-edit">编辑个人信息</el-button>
+           <el-button  v-if="userID==$store.state.user.userId" @click="$router.push(`/user/${$route.params.id}`)" style="border-radius: 30px ; float:right" icon="el-icon-edit">编辑个人信息</el-button>
            </div>
             <div class="love" style="text-align:center">
             <div> 
