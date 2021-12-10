@@ -16,7 +16,7 @@
     data() {
       return {
         imageUrl: '',
-        url:'/api/avatar/upload'
+        url:`/api/avatar/upload`
       };
     },
     methods: {
