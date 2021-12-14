@@ -63,16 +63,21 @@
   </div>
   </el-col>
   <el-col :span="8"  style="line-height:60px"><div class="header-img" v-if="islogin">
+     
+       <div  style="width:150px; overflow:hidden ; margin:0px auto">
+
+      
        <el-popover
   placement="bottom"
     width="200"
     trigger="hover"
   >
       <div type="text" @click="open" style="margin:0px 80px">退出</div>
-     <img :src='user.avatarUrl' alt="" class="imgheaer" slot="reference"  @click="$router.push(`/self/${user.userId}`)">
+     <img style="float:left" :src='user.avatarUrl' alt="" class="imgheaer" slot="reference"  @click="$router.push(`/self/${user.userId}`)">
     <!-- <el-button slot="reference">hover 激活</el-button> -->
   </el-popover>
-      <span>{{user.nickname}}</span>
+      <span >{{user.nickname}}</span> 
+      </div>
   </div>
   <div class="header-img" v-else> 
      

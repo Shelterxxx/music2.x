@@ -106,6 +106,10 @@
   }
 </script>
 <style lang="less" scoped>
+.el-row{
+  height:calc(100vh - 140px) ;
+  overflow: auto;
+}
 .el-menu{
     text-align: start;
 }

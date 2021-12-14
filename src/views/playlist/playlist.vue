@@ -1,5 +1,8 @@
 <template>
-    <el-container  style="calc(100vh -140px) ; overflow:auto" >
+      <div style="  height: calc(100vh - 140px); ; overflow:auto">
+
+     
+    <el-container  >
   <el-header  style=" height: auto;">
     <div class="left">
         <img :src="coverImgUrl" alt="">
@@ -105,7 +108,7 @@
     <el-tab-pane label="评论" name="second"><commit v-if="activeName=='second'"></commit></el-tab-pane>
     <el-tab-pane label="收藏者" name="third"><share v-if="activeName=='third'" ></share></el-tab-pane>
   </el-tabs></el-main>
-</el-container>
+</el-container> </div>
 </template>
 <script>
 

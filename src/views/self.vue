@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div  style="height:calc(100vh - 140px); overflow:auto">
         <div class="header">
          <div class="img">
              <img  class="headimg" :src="user.profile.avatarUrl" alt="">
