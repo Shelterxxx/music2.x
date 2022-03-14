@@ -97,7 +97,6 @@ export default {
             margin: 0px 40px;
            
             i{ 
-
                 position: absolute;
                    top: 36%;
                   left: 39%;
@@ -105,12 +104,8 @@ export default {
                 font-size: 50px;
                
             }
-              :hover ~.xxxxx{
-              opacity: 1;
-                    color: red;
-                    transition: 1s all;
-        
-            }
+             
+           
             img{
                 height: 100%;
                 width: 100%;
@@ -124,6 +119,10 @@ export default {
                    font-size: 32px;
                    color: rgb(255, 255, 255);
             }
+        }
+        .imgs:hover i{
+           opacity: 1;
+           transition: all 2s;
         }
            .xxxx{
                padding: 0px  40px;
@@ -160,7 +159,7 @@ export default {
                   opacity: 0;
                 font-size: 50px;
                }
-               :hover ~.xxxxx{
+               :hover .xxxxx{
                     opacity: 1;
                     color: red;
                     transition: 1s all;

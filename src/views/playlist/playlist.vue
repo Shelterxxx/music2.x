@@ -289,8 +289,7 @@ export default {
       }
     },
   async  mounted(){
-    console.log(this.$store.state.loveid.indexOf(1466598054),'sss')
-       console.log(this.$store.state.loveid,'sss')
+
      this.playlist(this.$route.params.id) 
       
        
